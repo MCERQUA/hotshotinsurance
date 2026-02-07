@@ -56,7 +56,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4 relative z-10 py-20">
           <div className="max-w-4xl">
             <FadeIn delay={0.1}>
-              <Badge className="mb-6 bg-truck-orange/20 text-truck-amber border-truck-orange/30 hover:bg-truck-orange/30 px-6 py-3 text-base font-bold backdrop-blur">
+              <Badge className="mb-6 bg-truck-orange text-black border-truck-orange hover:bg-truck-amber px-6 py-3 text-base font-black shadow-lg shadow-truck-orange/40">
                 <MapPin className="w-5 h-5 mr-2" />
                 Licensed in All 50 States
               </Badge>
@@ -89,7 +89,7 @@ export default function HomePage() {
                   <Button
                     asChild
                     size="lg"
-                    className="bg-gradient-to-r from-truck-orange to-truck-amber hover:from-truck-amber hover:to-truck-orange text-black font-black shadow-2xl shadow-truck-orange/30 px-10 py-8 text-xl rounded-xl animate-pulse-glow border-2 border-truck-amber/50"
+                    className="bg-truck-orange hover:bg-truck-amber text-black font-black shadow-2xl shadow-truck-orange/50 px-10 py-8 text-xl rounded-xl animate-pulse-glow border-4 border-black"
                   >
                     <Link href="/quote">
                       GET YOUR FREE QUOTE
@@ -165,7 +165,7 @@ export default function HomePage() {
               <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
                 COVERAGE THAT <span className="text-gradient">PROTECTS YOUR BUSINESS</span>
               </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              <p className="text-xl text-white max-w-3xl mx-auto font-medium" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}}>
                 We understand hotshot trucking. Get the protection you need to keep your rig on the road and your business profitable.
               </p>
             </div>
