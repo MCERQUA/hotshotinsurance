@@ -173,25 +173,30 @@ export default function HomePage() {
 
           <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {siteConfig.coverageTypes.map((coverage, index) => {
-              const Icon = {
-                Shield: Shield,
-                Truck: Truck,
-                Zap: Zap,
-                Users: Users,
-              }[coverage.icon] || Shield;
+              const coverageImages: Record<string, string> = {
+                "General Liability": "/images/coverage/general-liability.png",
+                "Cargo Liability": "/images/coverage/cargo-liability.png",
+                "Physical Damage": "/images/coverage/physical-damage.png",
+                "Workers Compensation": "/images/coverage/workers-comp.png",
+              };
 
               return (
                 <StaggerItem key={coverage.title}>
                   <ScaleOnHover>
-                    <Card className="truck-paint border-2 border-white/10 hover:border-truck-orange/50 transition-all duration-300 h-full group">
+                    <Card className="truck-paint border-2 border-truck-orange/20 hover:border-truck-orange transition-all duration-300 h-full group overflow-hidden">
                       <CardContent className="pt-8 pb-6 text-center">
-                        <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-truck-orange/20 to-truck-amber/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 glow-amber">
-                          <Icon className="w-10 h-10 text-truck-amber" />
+                        <div className="relative w-32 h-32 mx-auto mb-6 rounded-2xl overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                          <Image
+                            src={coverageImages[coverage.title]}
+                            alt={coverage.title}
+                            fill
+                            className="object-contain p-2"
+                          />
                         </div>
                         <h3 className="text-2xl font-black text-white mb-3">
                           {coverage.title}
                         </h3>
-                        <p className="text-gray-400 leading-relaxed">
+                        <p className="text-gray-300 leading-relaxed font-medium">
                           {coverage.description}
                         </p>
                       </CardContent>
