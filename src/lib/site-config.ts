@@ -106,6 +106,30 @@ export const siteConfig = {
     instagram: "https://instagram.com/contractorschoice",
     linkedin: "https://linkedin.com/company/contractorschoice",
   },
+
+  // Hotshot truck types we insure
+  truckTypes: [
+    {
+      name: "1-Ton Dually",
+      description: "Classic hotshot workhorse",
+      specs: "Up to 40ft flatbed trailers",
+    },
+    {
+      name: "3/4-Ton Heavy Duty",
+      description: "Versatile mid-weight hauler",
+      specs: "Perfect for regional runs",
+    },
+    {
+      name: "Medium Duty Trucks",
+      description: "Serious hauling power",
+      specs: "Class 4-6 commercial trucks",
+    },
+    {
+      name: "Expedited Freight Rigs",
+      description: "Speed and reliability",
+      specs: "Any hotshot configuration",
+    },
+  ],
 };
 
 export type SiteConfig = typeof siteConfig;

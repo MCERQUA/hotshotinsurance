@@ -2,27 +2,28 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { 
-  Shield, 
-  Car, 
-  Heart, 
-  AlertTriangle, 
-  Wrench, 
+import {
+  Shield,
+  Car,
+  Heart,
+  AlertTriangle,
+  Wrench,
   Flame,
   ThumbsUp,
   CheckCircle,
   ArrowRight,
   Phone,
-  Zap
+  Zap,
+  Truck
 } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Coverage Options",
-  description: "Comprehensive insurance coverage for Talaria electric bikes. Collision, comprehensive, liability, medical, and accessory coverage available nationwide.",
+  description: "Comprehensive insurance coverage for hotshot trucks. Collision, comprehensive, liability, medical, and accessory coverage available nationwide.",
   openGraph: {
-    title: "Coverage Options | Talaria Insurance",
-    description: "Comprehensive insurance coverage for Talaria electric bikes. Collision, comprehensive, liability, medical, and accessory coverage.",
+    title: "Coverage Options | hotshot truck Insurance",
+    description: "Comprehensive insurance coverage for hotshot trucks. Collision, comprehensive, liability, medical, and accessory coverage.",
   },
 };
 
@@ -32,7 +33,7 @@ const coverageDetails = [
     name: "Comprehensive Coverage",
     description: "Full protection against theft, vandalism, fire, and weather damage",
     details: [
-      "Theft protection at home, on trails, or in transit",
+      "Theft protection at home, on routes, or in transit",
       "Vandalism and malicious damage",
       "Fire and smoke damage",
       "Weather events (hail, flood, wind)",
@@ -63,7 +64,7 @@ const coverageDetails = [
       "Legal defense costs",
       "Medical expenses for others",
       "Coverage for lawsuits",
-      "Peace of mind while riding",
+      "Peace of mind while hauling",
     ],
   },
   {
@@ -109,24 +110,24 @@ const coverageDetails = [
 
 const faqItems = [
   {
-    question: "What makes Talaria insurance different from regular motorcycle insurance?",
-    answer: "Talaria bikes are high-performance electric vehicles that don't fit neatly into traditional insurance categories. Standard motorcycle policies often undervalue e-bikes or have exclusions for electric vehicles. We specialize in understanding the true value and unique risks of Talaria bikes.",
+    question: "What makes hotshot truck insurance different from regular commercial trucking insurance?",
+    answer: "hotshot trucks are high-performance electric vehicles that don't fit neatly into traditional insurance categories. Standard commercial trucking policies often undervalue trucks or have exclusions for electric vehicles. We specialize in understanding the true value and unique risks of hotshot trucks.",
   },
   {
-    question: "Does my homeowner's insurance cover my Talaria?",
-    answer: "Homeowner's policies typically have low limits for motorized vehicles and often exclude them entirely when used off-premises. A dedicated Talaria policy provides proper coverage for theft, damage, and liability wherever you ride.",
+    question: "Does my homeowner's insurance cover my hotshot truck?",
+    answer: "Homeowner's policies typically have low limits for motorized vehicles and often exclude them entirely when used off-premises. A dedicated hotshot truck policy provides proper coverage for theft, damage, and liability wherever you haul.",
   },
   {
-    question: "Can I insure a modified Talaria?",
-    answer: "Yes! We understand that many Talaria owners modify their bikes. Our accessory coverage can protect your aftermarket parts and performance upgrades at their true value.",
+    question: "Can I insure a modified hotshot truck?",
+    answer: "Yes! We understand that many hotshot truck owners modify their bikes. Our accessory coverage can protect your aftermarket parts and performance upgrades at their true value.",
   },
   {
-    question: "Do you cover off-road riding?",
-    answer: "Absolutely. Whether you're riding trails, tracks, or private property, our policies can be tailored to cover your actual riding activities.",
+    question: "Do you cover off-road hauling?",
+    answer: "Absolutely. Whether you're hauling routes, tracks, or private property, our policies can be tailored to cover your actual hauling activities.",
   },
   {
     question: "What information do I need to get a quote?",
-    answer: "You'll need your Talaria model, year, any modifications, where you ride, and basic personal information. The quote process takes just a few minutes.",
+    answer: "You'll need your hotshot truck model, year, any modifications, where you haul, and basic personal information. The quote process takes just a few minutes.",
   },
 ];
 
@@ -138,7 +139,7 @@ export default function CoveragePage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Insurance Coverage for Your Talaria
+              Insurance Coverage for Your hotshot truck
             </h1>
             <p className="text-lg md:text-xl text-slate-200 mb-8">
               Comprehensive protection options designed specifically for high-performance electric bikes.
@@ -161,7 +162,7 @@ export default function CoveragePage() {
               Coverage Options
             </h2>
             <p className="text-lg text-muted-foreground">
-              Choose the coverage that fits your riding style and needs. Mix and match options for complete protection.
+              Choose the coverage that fits your hauling style and needs. Mix and match options for complete protection.
             </p>
           </div>
           
@@ -191,39 +192,40 @@ export default function CoveragePage() {
         </div>
       </section>
 
-      {/* Talaria Models */}
+      {/* hotshot truck Models */}
       <section className="py-16 lg:py-24 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Models We Cover
+            <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
+              TRUCKS WE <span className="text-gradient">PROTECT</span>
             </h2>
-            <p className="text-lg text-muted-foreground">
-              We insure all Talaria models and most other electric bikes.
+            <p className="text-lg text-gray-300">
+              From duallies to medium-duty rigs, we insure all hotshot configurations nationwide.
             </p>
           </div>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            {siteConfig.talariaModels.map((model) => (
-              <Card key={model.name} className="text-center hover:shadow-lg transition-shadow">
+            {siteConfig.truckTypes.map((truck) => (
+              <Card key={truck.name} className="text-center hover:shadow-lg transition-shadow truck-paint border-truck-orange/20">
                 <CardContent className="pt-6">
-                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                    <Zap className="h-8 w-8 text-primary" />
+                  <div className="w-16 h-16 rounded-full bg-truck-orange/10 flex items-center justify-center mx-auto mb-4">
+                    <Truck className="h-8 w-8 text-truck-amber" />
                   </div>
-                  <h3 className="font-bold mb-2">{model.name}</h3>
-                  <p className="text-sm text-muted-foreground">{model.description}</p>
+                  <h3 className="font-bold mb-2 text-white">{truck.name}</h3>
+                  <p className="text-sm text-gray-400 mb-1">{truck.description}</p>
+                  <p className="text-xs text-truck-amber font-medium">{truck.specs}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
           
           <div className="text-center mt-8">
-            <p className="text-muted-foreground">
-              Have a different e-bike model? We likely cover it too.{" "}
-              <Link href="/contact" className="text-primary hover:underline">
+            <p className="text-gray-300">
+              Got a different hotshot setup? We cover it.{" "}
+              <Link href="/contact" className="text-truck-amber font-bold hover:text-white transition-colors">
                 Contact us
               </Link>{" "}
-              to discuss your needs.
+              to get protected.
             </p>
           </div>
         </div>
@@ -238,7 +240,7 @@ export default function CoveragePage() {
                 Frequently Asked Questions
               </h2>
               <p className="text-lg text-muted-foreground">
-                Common questions about Talaria insurance coverage.
+                Common questions about hotshot truck insurance coverage.
               </p>
             </div>
             
@@ -273,7 +275,7 @@ export default function CoveragePage() {
               Get Your Custom Quote
             </h2>
             <p className="text-lg text-slate-200 mb-8">
-              Every rider is different. Let us create a coverage package tailored to your specific Talaria and riding habits.
+              Every haulr is different. Let us create a coverage package tailored to your specific hotshot truck and hauling habits.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-indigo-600 hover:bg-indigo-700">

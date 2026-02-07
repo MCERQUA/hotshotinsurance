@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X, Phone, Zap } from "lucide-react";
+import { Menu, X, Phone, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { siteConfig } from "@/lib/site-config";
@@ -16,11 +16,11 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary">
-              <Zap className="w-6 h-6 text-primary-foreground" />
+            <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-truck-orange">
+              <Truck className="w-6 h-6 text-black" />
             </div>
-            <span className="font-bold text-xl text-foreground">
-              Talaria<span className="text-primary">Insurance</span>
+            <span className="font-black text-xl text-foreground">
+              HOTSHOT<span className="text-truck-amber">INSURANCE</span>
             </span>
           </Link>
 

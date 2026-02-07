@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Zap, Phone, Mail, MapPin } from "lucide-react";
+import { Truck, Phone, Mail, MapPin } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 
 export function Footer() {
@@ -12,17 +12,17 @@ export function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-500 to-blue-500">
-                <Zap className="w-6 h-6 text-white" />
+              <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-truck-orange">
+                <Truck className="w-6 h-6 text-black" />
               </div>
-              <span className="font-bold text-xl text-white">
-                Talaria<span className="text-indigo-400">Insurance</span>
+              <span className="font-black text-xl text-white">
+                HOTSHOT<span className="text-truck-amber">INSURANCE</span>
               </span>
             </Link>
             <p className="text-sm text-slate-400">
-              Specialized insurance coverage for Talaria electric bikes. Protecting riders nationwide with comprehensive e-bike insurance solutions.
+              Specialized insurance coverage for hotshot trucking operations. Protecting truckers nationwide with comprehensive general liability, cargo, and physical damage insurance.
             </p>
-            <p className="text-sm font-medium text-slate-300">
+            <p className="text-sm font-bold text-truck-amber">
               Licensed in All 50 States
             </p>
           </div>
@@ -54,15 +54,15 @@ export function Footer() {
 
           {/* Talaria Models */}
           <div>
-            <h3 className="font-semibold text-white mb-4">Talaria Models We Cover</h3>
+            <h3 className="font-semibold text-white mb-4">Trucks We Insure</h3>
             <ul className="space-y-2">
-              {siteConfig.talariaModels.map((model) => (
-                <li key={model.name}>
-                  <span className="text-sm text-slate-400">{model.name}</span>
+              {siteConfig.truckTypes.map((truck) => (
+                <li key={truck.name}>
+                  <span className="text-sm text-slate-400">{truck.name}</span>
                 </li>
               ))}
               <li>
-                <span className="text-sm text-slate-400">All Other E-Bike Models</span>
+                <span className="text-sm text-slate-400">All Hotshot Configurations</span>
               </li>
             </ul>
           </div>

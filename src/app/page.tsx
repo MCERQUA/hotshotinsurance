@@ -3,28 +3,30 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Shield, 
-  Zap, 
-  Phone, 
-  CheckCircle, 
-  Users, 
-  MapPin, 
-  Clock, 
+import {
+  Shield,
+  Truck,
+  Phone,
+  CheckCircle,
+  Users,
+  MapPin,
+  Clock,
   Award,
   ArrowRight,
   Star,
   TrendingUp,
-  Lock,
-  Headphones,
-  Settings
+  Zap,
+  Package,
+  DollarSign,
+  Gauge,
+  Map
 } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
-import { 
-  FadeIn, 
-  SlideInLeft, 
-  SlideInRight, 
-  StaggerContainer, 
+import {
+  FadeIn,
+  SlideInLeft,
+  SlideInRight,
+  StaggerContainer,
   StaggerItem,
   Float,
   ScaleOnHover
@@ -33,457 +35,293 @@ import {
 export default function HomePage() {
   return (
     <>
-      {/* Hero Section - Modern with animated elements */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-        {/* Animated background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-950 via-slate-900 to-blue-950" />
-        <div className="absolute inset-0 bg-[url('/images/hero-ebike.jpg')] bg-cover bg-center opacity-15" />
-        
-        {/* Animated gradient orbs */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-500/30 rounded-full blur-[100px] animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/25 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: "1s" }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-violet-600/10 rounded-full blur-[150px]" />
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="text-center lg:text-left">
-              <FadeIn delay={0.1}>
-                <Badge className="mb-6 bg-indigo-500/20 text-indigo-300 border-indigo-500/30 hover:bg-indigo-500/30 px-4 py-2 text-sm">
-                  <Zap className="w-4 h-4 mr-2" />
-                  Licensed in All 50 States
-                </Badge>
-              </FadeIn>
-              
-              <FadeIn delay={0.2}>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight text-white">
-                  Premium Insurance for{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-blue-400">
-                    Talaria
-                  </span>
-                  <br />
-                  Electric Bikes
-                </h1>
-              </FadeIn>
-              
-              <FadeIn delay={0.3}>
-                <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-xl">
-                  Comprehensive coverage designed for high-performance Talaria e-bikes. 
-                  From Sting to MX4 — ride with confidence knowing you're protected.
-                </p>
-              </FadeIn>
-              
-              <FadeIn delay={0.4}>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <ScaleOnHover>
-                    <Button asChild size="lg" className="bg-gradient-to-r from-indigo-500 to-blue-500 hover:from-indigo-600 hover:to-blue-600 text-white shadow-lg shadow-indigo-500/25 px-8 py-6 text-lg rounded-xl">
-                      <Link href="/quote">
-                        Get Your Free Quote
-                        <ArrowRight className="ml-2 h-5 w-5" />
-                      </Link>
-                    </Button>
-                  </ScaleOnHover>
-                  <ScaleOnHover>
-                    <Button asChild size="lg" className="border-2 border-slate-600 bg-slate-800/50 text-white hover:bg-slate-700 hover:border-slate-500 px-8 py-6 text-lg rounded-xl backdrop-blur">
-                      <a href={`tel:${siteConfig.company.phone}`}>
-                        <Phone className="mr-2 h-5 w-5" />
-                        {siteConfig.company.phone}
-                      </a>
-                    </Button>
-                  </ScaleOnHover>
-                </div>
-              </FadeIn>
-              
-              {/* Trust badges */}
-              <FadeIn delay={0.5}>
-                <div className="mt-12 flex flex-wrap gap-6 justify-center lg:justify-start">
-                  <div className="flex items-center gap-2 text-slate-400">
-                    <Shield className="w-5 h-5 text-indigo-400" />
-                    <span className="text-sm">A+ Rated</span>
+      {/* Epic Hero Section - Badass Truck Theme */}
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-truck-black">
+        {/* Hero truck image with gradient overlay */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/trucks/hero-truck.png"
+            alt="Powerful hotshot truck on highway"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          <div className="absolute inset-0 gradient-hero-overlay" />
+        </div>
+
+        {/* Animated amber glow orbs */}
+        <div className="absolute top-20 left-10 w-96 h-96 bg-truck-orange/20 rounded-full blur-[120px] animate-pulse" />
+        <div className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-truck-amber/15 rounded-full blur-[150px] animate-pulse" style={{ animationDelay: "1.5s" }} />
+
+        <div className="container mx-auto px-4 relative z-10 py-20">
+          <div className="max-w-4xl">
+            <FadeIn delay={0.1}>
+              <Badge className="mb-6 bg-truck-orange/20 text-truck-amber border-truck-orange/30 hover:bg-truck-orange/30 px-6 py-3 text-base font-bold backdrop-blur">
+                <MapPin className="w-5 h-5 mr-2" />
+                Licensed in All 50 States
+              </Badge>
+            </FadeIn>
+
+            <FadeIn delay={0.2}>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-8 leading-none">
+                <span className="text-white block mb-2">
+                  HOTSHOT
+                </span>
+                <span className="text-gradient block mb-4">
+                  INSURANCE
+                </span>
+                <span className="text-white/90 text-3xl md:text-4xl lg:text-5xl font-bold block">
+                  BUILT FOR THE ROAD
+                </span>
+              </h1>
+            </FadeIn>
+
+            <FadeIn delay={0.3}>
+              <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl font-medium leading-relaxed">
+                Specialized insurance coverage for hotshot truckers who <span className="text-truck-amber font-bold">move fast</span>, <span className="text-truck-amber font-bold">work hard</span>, and <span className="text-truck-amber font-bold">dominate the road</span>.
+                General liability, cargo protection, and physical damage coverage that keeps you rolling.
+              </p>
+            </FadeIn>
+
+            <FadeIn delay={0.4}>
+              <div className="flex flex-col sm:flex-row gap-4 mb-12">
+                <ScaleOnHover>
+                  <Button
+                    asChild
+                    size="lg"
+                    className="bg-gradient-to-r from-truck-orange to-truck-amber hover:from-truck-amber hover:to-truck-orange text-black font-black shadow-2xl shadow-truck-orange/30 px-10 py-8 text-xl rounded-xl animate-pulse-glow border-2 border-truck-amber/50"
+                  >
+                    <Link href="/quote">
+                      GET YOUR FREE QUOTE
+                      <ArrowRight className="ml-2 h-6 w-6" />
+                    </Link>
+                  </Button>
+                </ScaleOnHover>
+                <ScaleOnHover>
+                  <Button
+                    asChild
+                    size="lg"
+                    className="border-3 border-white/50 bg-black/60 text-white hover:bg-white/10 hover:border-white px-10 py-8 text-xl rounded-xl backdrop-blur-sm font-bold"
+                  >
+                    <a href={`tel:${siteConfig.company.phone}`}>
+                      <Phone className="mr-2 h-6 w-6" />
+                      {siteConfig.company.phone}
+                    </a>
+                  </Button>
+                </ScaleOnHover>
+              </div>
+            </FadeIn>
+
+            {/* Power stats */}
+            <FadeIn delay={0.5}>
+              <div className="flex flex-wrap gap-8">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-truck-green/20 flex items-center justify-center">
+                    <CheckCircle className="w-6 h-6 text-truck-green" />
                   </div>
-                  <div className="flex items-center gap-2 text-slate-400">
-                    <Users className="w-5 h-5 text-indigo-400" />
-                    <span className="text-sm">5,000+ Riders</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-slate-400">
-                    <Clock className="w-5 h-5 text-indigo-400" />
-                    <span className="text-sm">24/7 Claims</span>
-                  </div>
-                </div>
-              </FadeIn>
-            </div>
-            
-            {/* Hero image with floating effect */}
-            <SlideInRight delay={0.3} className="hidden lg:block">
-              <Float duration={4} y={15}>
-                <div className="relative">
-                  <div className="absolute -inset-4 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-3xl blur-2xl opacity-30" />
-                  <div className="relative w-full h-[500px] rounded-2xl overflow-hidden border border-slate-700/50 shadow-2xl">
-                    <Image
-                      src="/images/hero-ebike.jpg"
-                      alt="Talaria electric bike"
-                      fill
-                      className="object-cover"
-                      priority
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />
-                    
-                    {/* Floating stats card */}
-                    <div className="absolute bottom-6 left-6 right-6 bg-slate-900/90 backdrop-blur-xl rounded-xl p-4 border border-slate-700/50">
-                      <div className="flex justify-between items-center">
-                        <div>
-                          <p className="text-indigo-400 text-sm font-medium">Starting at</p>
-                          <p className="text-white text-2xl font-bold">$12/month</p>
-                        </div>
-                        <div className="text-right">
-                          <p className="text-slate-400 text-sm">Coverage up to</p>
-                          <p className="text-white text-2xl font-bold">$25,000</p>
-                        </div>
-                      </div>
-                    </div>
+                  <div>
+                    <div className="text-white font-bold text-lg">50 States</div>
+                    <div className="text-gray-400 text-sm">Nationwide Coverage</div>
                   </div>
                 </div>
-              </Float>
-            </SlideInRight>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-truck-orange/20 flex items-center justify-center">
+                    <Shield className="w-6 h-6 text-truck-orange" />
+                  </div>
+                  <div>
+                    <div className="text-white font-bold text-lg">Full Protection</div>
+                    <div className="text-gray-400 text-sm">Liability & Cargo</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-truck-amber/20 flex items-center justify-center">
+                    <Zap className="w-6 h-6 text-truck-amber" />
+                  </div>
+                  <div>
+                    <div className="text-white font-bold text-lg">Fast Quotes</div>
+                    <div className="text-gray-400 text-sm">Get Covered Today</div>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
           </div>
         </div>
-        
+
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-slate-600 rounded-full flex justify-center pt-2">
-            <div className="w-1.5 h-3 bg-indigo-500 rounded-full animate-pulse" />
+          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2">
+            <div className="w-1 h-3 bg-truck-amber rounded-full animate-pulse" />
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-slate-50 border-y border-slate-200">
-        <div className="container mx-auto px-4">
-          <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <StaggerItem>
-              <div className="text-center">
-                <p className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-600">50</p>
-                <p className="text-slate-600 mt-2">States Licensed</p>
-              </div>
-            </StaggerItem>
-            <StaggerItem>
-              <div className="text-center">
-                <p className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-600">20+</p>
-                <p className="text-slate-600 mt-2">Years Experience</p>
-              </div>
-            </StaggerItem>
-            <StaggerItem>
-              <div className="text-center">
-                <p className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-600">24/7</p>
-                <p className="text-slate-600 mt-2">Claims Support</p>
-              </div>
-            </StaggerItem>
-            <StaggerItem>
-              <div className="text-center">
-                <p className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-600">97%</p>
-                <p className="text-slate-600 mt-2">Satisfaction Rate</p>
-              </div>
-            </StaggerItem>
-          </StaggerContainer>
-        </div>
-      </section>
+      {/* Coverage Types - Bold Cards */}
+      <section className="py-20 bg-truck-black relative">
+        <div className="absolute inset-0 road-texture opacity-50" />
 
-      {/* Why Talaria Insurance - Modern Cards */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <FadeIn className="text-center max-w-3xl mx-auto mb-16">
-            <Badge className="mb-4 bg-indigo-100 text-indigo-700 border-indigo-200">Why Choose Us</Badge>
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-slate-900">
-              Insurance Built for{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-600">
-                Talaria Riders
-              </span>
-            </h2>
-            <p className="text-lg text-slate-600">
-              Standard insurance doesn't understand high-performance e-bikes. We do.
-            </p>
-          </FadeIn>
-          
-          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" staggerDelay={0.15}>
-            <StaggerItem>
-              <ScaleOnHover>
-                <Card className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-white to-slate-50">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-3xl group-hover:bg-indigo-500/20 transition-colors" />
-                  <CardHeader className="relative">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center mb-4 shadow-lg shadow-indigo-500/25">
-                      <Zap className="h-7 w-7 text-white" />
-                    </div>
-                    <CardTitle className="text-xl">High-Performance Coverage</CardTitle>
-                    <CardDescription className="text-base">
-                      Talaria bikes deliver serious power. We provide coverage that matches their true value and performance capabilities.
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
-              </ScaleOnHover>
-            </StaggerItem>
-            
-            <StaggerItem>
-              <ScaleOnHover>
-                <Card className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-white to-slate-50">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl group-hover:bg-blue-500/20 transition-colors" />
-                  <CardHeader className="relative">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mb-4 shadow-lg shadow-blue-500/25">
-                      <Lock className="h-7 w-7 text-white" />
-                    </div>
-                    <CardTitle className="text-xl">Theft Protection</CardTitle>
-                    <CardDescription className="text-base">
-                      E-bikes are prime theft targets. Our comprehensive coverage protects against theft anywhere — home, trail, or in transit.
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
-              </ScaleOnHover>
-            </StaggerItem>
-            
-            <StaggerItem>
-              <ScaleOnHover>
-                <Card className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-white to-slate-50">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-violet-500/10 rounded-full blur-3xl group-hover:bg-violet-500/20 transition-colors" />
-                  <CardHeader className="relative">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500 to-violet-600 flex items-center justify-center mb-4 shadow-lg shadow-violet-500/25">
-                      <Shield className="h-7 w-7 text-white" />
-                    </div>
-                    <CardTitle className="text-xl">Liability Coverage</CardTitle>
-                    <CardDescription className="text-base">
-                      Protect yourself from claims. Our liability coverage ensures you're protected if an accident causes injury or damage.
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
-              </ScaleOnHover>
-            </StaggerItem>
-            
-            <StaggerItem>
-              <ScaleOnHover>
-                <Card className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-white to-slate-50">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-3xl group-hover:bg-cyan-500/20 transition-colors" />
-                  <CardHeader className="relative">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center mb-4 shadow-lg shadow-cyan-500/25">
-                      <Settings className="h-7 w-7 text-white" />
-                    </div>
-                    <CardTitle className="text-xl">Modification Coverage</CardTitle>
-                    <CardDescription className="text-base">
-                      Upgraded your Talaria? We cover aftermarket controllers, batteries, suspension, and performance modifications.
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
-              </ScaleOnHover>
-            </StaggerItem>
-            
-            <StaggerItem>
-              <ScaleOnHover>
-                <Card className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-white to-slate-50">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-sky-500/10 rounded-full blur-3xl group-hover:bg-sky-500/20 transition-colors" />
-                  <CardHeader className="relative">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-sky-500 to-sky-600 flex items-center justify-center mb-4 shadow-lg shadow-sky-500/25">
-                      <Headphones className="h-7 w-7 text-white" />
-                    </div>
-                    <CardTitle className="text-xl">24/7 Claims Support</CardTitle>
-                    <CardDescription className="text-base">
-                      Accidents don't wait for business hours. Our dedicated team is available around the clock to help.
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
-              </ScaleOnHover>
-            </StaggerItem>
-            
-            <StaggerItem>
-              <ScaleOnHover>
-                <Card className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-white to-slate-50">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl group-hover:bg-purple-500/20 transition-colors" />
-                  <CardHeader className="relative">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center mb-4 shadow-lg shadow-purple-500/25">
-                      <MapPin className="h-7 w-7 text-white" />
-                    </div>
-                    <CardTitle className="text-xl">Nationwide Coverage</CardTitle>
-                    <CardDescription className="text-base">
-                      Licensed in all 50 states. Ride anywhere in the country with confidence knowing you're protected.
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
-              </ScaleOnHover>
-            </StaggerItem>
-          </StaggerContainer>
-        </div>
-      </section>
-
-      {/* Talaria Models - Modern Grid */}
-      <section className="py-24 bg-gradient-to-b from-indigo-950 to-slate-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/ebike-trail.jpg')] bg-cover bg-center opacity-10" />
-        <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-white to-transparent" />
-        
         <div className="container mx-auto px-4 relative z-10">
-          <FadeIn className="text-center max-w-3xl mx-auto mb-16">
-            <Badge className="mb-4 bg-indigo-500/20 text-indigo-300 border-indigo-500/30">Models We Cover</Badge>
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              Every Talaria Model,{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-blue-400">
-                Fully Protected
-              </span>
-            </h2>
-            <p className="text-lg text-slate-400">
-              From trail riding to street legal — we insure all Talaria electric bikes.
-            </p>
+          <FadeIn>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
+                COVERAGE THAT <span className="text-gradient">PROTECTS YOUR BUSINESS</span>
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                We understand hotshot trucking. Get the protection you need to keep your rig on the road and your business profitable.
+              </p>
+            </div>
           </FadeIn>
-          
-          <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" staggerDelay={0.1}>
-            {siteConfig.talariaModels.map((model) => (
-              <StaggerItem key={model.name}>
-                <ScaleOnHover scale={1.03}>
-                  <div className="group relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 border border-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
-                    <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/0 to-indigo-500/0 group-hover:from-indigo-500/5 group-hover:to-blue-500/5 rounded-2xl transition-all duration-300" />
-                    <div className="relative">
-                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-blue-500/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                        <Zap className="h-8 w-8 text-indigo-400" />
-                      </div>
-                      <h3 className="text-lg font-bold text-center mb-2">{model.name}</h3>
-                      <p className="text-slate-400 text-sm text-center mb-2">{model.description}</p>
-                      <p className="text-indigo-400 text-xs text-center font-medium">{model.specs}</p>
-                    </div>
-                  </div>
-                </ScaleOnHover>
-              </StaggerItem>
-            ))}
+
+          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {siteConfig.coverageTypes.map((coverage, index) => {
+              const Icon = {
+                Shield: Shield,
+                Truck: Truck,
+                Zap: Zap,
+                Users: Users,
+              }[coverage.icon] || Shield;
+
+              return (
+                <StaggerItem key={coverage.title}>
+                  <ScaleOnHover>
+                    <Card className="truck-paint border-2 border-white/10 hover:border-truck-orange/50 transition-all duration-300 h-full group">
+                      <CardContent className="pt-8 pb-6 text-center">
+                        <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-truck-orange/20 to-truck-amber/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 glow-amber">
+                          <Icon className="w-10 h-10 text-truck-amber" />
+                        </div>
+                        <h3 className="text-2xl font-black text-white mb-3">
+                          {coverage.title}
+                        </h3>
+                        <p className="text-gray-400 leading-relaxed">
+                          {coverage.description}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </ScaleOnHover>
+                </StaggerItem>
+              );
+            })}
           </StaggerContainer>
-          
-          <FadeIn delay={0.4} className="text-center mt-12">
-            <p className="text-slate-400 mb-6">
-              Don't see your model? We cover all electric bikes and similar vehicles.
-            </p>
-            <ScaleOnHover>
-              <Button asChild size="lg" className="bg-gradient-to-r from-indigo-500 to-blue-500 hover:from-indigo-600 hover:to-blue-600 text-white px-8 rounded-xl">
+
+          <FadeIn delay={0.4}>
+            <div className="text-center mt-12">
+              <Button
+                asChild
+                size="lg"
+                className="bg-truck-orange hover:bg-truck-amber text-black font-black px-8 py-6 text-lg rounded-xl"
+              >
                 <Link href="/coverage">
-                  View All Coverage Options
+                  VIEW ALL COVERAGE OPTIONS
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-            </ScaleOnHover>
+            </div>
           </FadeIn>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-24 bg-white">
+      {/* Why Choose Us - Power Features */}
+      <section className="py-20 bg-gradient-to-b from-truck-black via-truck-charcoal to-truck-black">
         <div className="container mx-auto px-4">
-          <FadeIn className="text-center max-w-3xl mx-auto mb-16">
-            <Badge className="mb-4 bg-indigo-100 text-indigo-700 border-indigo-200">Testimonials</Badge>
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-slate-900">
-              Trusted by{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-600">
-                Talaria Riders
-              </span>
-            </h2>
+          <FadeIn>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
+                WHY TRUCKERS <span className="text-gradient">CHOOSE US</span>
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                We're not just insurance brokers. We're your road partners, built by truckers for truckers.
+              </p>
+            </div>
           </FadeIn>
-          
-          <StaggerContainer className="grid md:grid-cols-3 gap-8" staggerDelay={0.15}>
-            <StaggerItem>
-              <Card className="border-0 shadow-lg bg-gradient-to-br from-white to-slate-50">
-                <CardContent className="pt-6">
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  <p className="text-slate-600 mb-6">
-                    "My Talaria Sting was my pride and joy. When it got stolen from my garage, these guys had my claim processed in 5 days. Incredible service."
-                  </p>
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-blue-500 flex items-center justify-center text-white font-bold">
-                      D
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Gauge,
+                title: "Lightning-Fast Quotes",
+                description: "Get your quote in minutes, not days. We know you've got loads to move and money to make."
+              },
+              {
+                icon: Shield,
+                title: "Comprehensive Protection",
+                description: "From general liability to cargo protection, we've got every angle covered so you can focus on the road."
+              },
+              {
+                icon: DollarSign,
+                title: "Competitive Rates",
+                description: "Best-in-class coverage at prices that won't eat into your profits. Period."
+              },
+              {
+                icon: Phone,
+                title: "24/7 Support",
+                description: "Trucking doesn't sleep, and neither do we. Call us anytime, day or night."
+              },
+              {
+                icon: Map,
+                title: "50-State Coverage",
+                description: "Licensed nationwide. Take your rig anywhere in America with full protection."
+              },
+              {
+                icon: Award,
+                title: "Industry Experts",
+                description: "Founded by Josh Cotner in 2005, we've been protecting contractors and truckers for decades."
+              }
+            ].map((feature, index) => (
+              <FadeIn key={feature.title} delay={index * 0.1}>
+                <ScaleOnHover>
+                  <div className="truck-paint border border-white/10 hover:border-truck-orange/50 rounded-2xl p-8 h-full transition-all duration-300 group">
+                    <div className="w-16 h-16 rounded-xl bg-truck-orange/10 flex items-center justify-center mb-6 group-hover:bg-truck-orange/20 transition-colors">
+                      <feature.icon className="w-8 h-8 text-truck-amber" />
                     </div>
-                    <div>
-                      <p className="font-semibold text-slate-900">Derek M.</p>
-                      <p className="text-sm text-slate-500">Talaria Sting Owner</p>
-                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-3">
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-400 leading-relaxed">
+                      {feature.description}
+                    </p>
                   </div>
-                </CardContent>
-              </Card>
-            </StaggerItem>
-            
-            <StaggerItem>
-              <Card className="border-0 shadow-lg bg-gradient-to-br from-white to-slate-50">
-                <CardContent className="pt-6">
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  <p className="text-slate-600 mb-6">
-                    "They actually understood what a Talaria is! Most insurance companies had no clue. Great rates and they covered all my mods too."
-                  </p>
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-violet-500 to-purple-500 flex items-center justify-center text-white font-bold">
-                      A
-                    </div>
-                    <div>
-                      <p className="font-semibold text-slate-900">Alex K.</p>
-                      <p className="text-sm text-slate-500">Talaria MX4 Owner</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </StaggerItem>
-            
-            <StaggerItem>
-              <Card className="border-0 shadow-lg bg-gradient-to-br from-white to-slate-50">
-                <CardContent className="pt-6">
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  <p className="text-slate-600 mb-6">
-                    "Had a trail accident and damaged my Sting R pretty badly. They covered repairs plus my upgraded suspension. Very impressed."
-                  </p>
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500 to-sky-500 flex items-center justify-center text-white font-bold">
-                      R
-                    </div>
-                    <div>
-                      <p className="font-semibold text-slate-900">Ryan T.</p>
-                      <p className="text-sm text-slate-500">Talaria Sting R Owner</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </StaggerItem>
-          </StaggerContainer>
+                </ScaleOnHover>
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-indigo-600 to-blue-600 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/ebike-action.jpg')] bg-cover bg-center opacity-10" />
-        <div className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <FadeIn className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
-              Ready to Protect Your Talaria?
+      {/* CTA Section - Strong Finish */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/trucks/truck-grille.png"
+            alt="Hotshot truck grille"
+            fill
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-black/80" />
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10 text-center">
+          <FadeIn>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6">
+              READY TO <span className="text-gradient-white-amber">HIT THE ROAD</span>?
             </h2>
-            <p className="text-xl text-white/80 mb-10">
-              Get a free, no-obligation quote in minutes. Join thousands of Talaria riders who trust us with their coverage.
+            <p className="text-2xl text-gray-300 mb-10 max-w-3xl mx-auto">
+              Get your free quote in 5 minutes. Full coverage, competitive rates, zero hassle.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <ScaleOnHover>
-                <Button asChild size="lg" className="bg-white text-indigo-600 hover:bg-slate-100 px-10 py-6 text-lg rounded-xl shadow-xl">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-truck-orange hover:bg-truck-amber text-black font-black px-12 py-8 text-2xl rounded-xl shadow-2xl shadow-truck-orange/40"
+                >
                   <Link href="/quote">
-                    Get Your Free Quote
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    GET YOUR FREE QUOTE NOW
+                    <ArrowRight className="ml-3 h-7 w-7" />
                   </Link>
                 </Button>
               </ScaleOnHover>
-              <ScaleOnHover>
-                <Button asChild size="lg" className="border-2 border-white/30 bg-white/10 text-white hover:bg-white/20 px-10 py-6 text-lg rounded-xl backdrop-blur">
-                  <a href={`tel:${siteConfig.company.phone}`}>
-                    <Phone className="mr-2 h-5 w-5" />
-                    Call Us Now
-                  </a>
-                </Button>
-              </ScaleOnHover>
+              <div className="text-gray-400">
+                or call <a href={`tel:${siteConfig.company.phone}`} className="text-truck-amber font-bold hover:text-white transition-colors text-2xl">{siteConfig.company.phone}</a>
+              </div>
             </div>
           </FadeIn>
         </div>

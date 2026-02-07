@@ -147,7 +147,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <CardContent className="pt-6">
                   <h3 className="font-bold text-lg mb-2">Need Surron Insurance?</h3>
                   <p className="text-sm text-slate-200 mb-4">
-                    Get a free quote for comprehensive coverage on your electric bike.
+                    Get a free quote for comprehensive coverage on your truck.
                   </p>
                   <Button asChild className="w-full bg-emerald-600 hover:bg-emerald-700">
                     <Link href="/quote">

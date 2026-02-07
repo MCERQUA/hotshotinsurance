@@ -26,7 +26,7 @@ export default function PrivacyPage() {
           <p>We may collect personal information that you voluntarily provide to us, including:</p>
           <ul>
             <li>Name and contact information (email, phone, address)</li>
-            <li>Information about your electric bike (make, model, value)</li>
+            <li>Information about your hotshot truck (make, model, value)</li>
             <li>Insurance-related information necessary for providing quotes</li>
             <li>Communication preferences</li>
           </ul>

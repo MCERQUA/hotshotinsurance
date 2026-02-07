@@ -8,10 +8,10 @@ import { Calendar, Clock, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Learn about Talaria electric bikes, e-bike insurance, riding tips, and industry news. Expert insights for the e-bike community.",
+  description: "Learn about Hotshot trucks, truck insurance, hauling tips, and industry news. Expert insights for the truck community.",
   openGraph: {
-    title: "Blog | Talaria Insurance",
-    description: "Learn about Talaria electric bikes, e-bike insurance, riding tips, and industry news.",
+    title: "Blog | Hotshot Insurance",
+    description: "Learn about Hotshot trucks, truck insurance, hauling tips, and industry news.",
   },
 };
 
@@ -26,10 +26,10 @@ export default function BlogPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-              Talaria Insurance Blog
+              Hotshot Insurance Blog
             </h1>
             <p className="text-lg text-slate-200">
-              Expert insights on e-bike insurance, Talaria models, riding tips, and industry news.
+              Expert insights on truck insurance, Hotshot models, hauling tips, and industry news.
             </p>
           </div>
         </div>
@@ -111,7 +111,7 @@ export default function BlogPage() {
             <div className="text-center py-16">
               <h2 className="text-2xl font-bold mb-4">Coming Soon</h2>
               <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-                We're working on great content about Talaria bikes and e-bike insurance. Check back soon for articles, guides, and industry insights.
+                We're working on great content about Hotshot bikes and truck insurance. Check back soon for articles, guides, and industry insights.
               </p>
               <Button asChild>
                 <Link href="/quote">Get a Quote While You Wait</Link>
@@ -129,7 +129,7 @@ export default function BlogPage() {
               Stay Updated
             </h2>
             <p className="text-muted-foreground mb-6">
-              Have questions about Talaria insurance? We're here to help.
+              Have questions about Hotshot insurance? We're here to help.
             </p>
             <Button asChild>
               <Link href="/contact">

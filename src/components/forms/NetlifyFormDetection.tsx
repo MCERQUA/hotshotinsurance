@@ -30,10 +30,10 @@ export function NetlifyFormDetection() {
         <input type="date" name="dateOfBirth" />
         
         {/* E-Bike Information */}
-        <input type="text" name="ebikeBrand" />
-        <input type="text" name="ebikeModel" />
-        <input type="text" name="ebikeYear" />
-        <input type="text" name="ebikeValue" />
+        <input type="text" name="truckMake" />
+        <input type="text" name="truckModel" />
+        <input type="text" name="truckYear" />
+        <input type="text" name="truckValue" />
         <input type="text" name="vinSerialNumber" />
         <input type="text" name="isModified" />
         <textarea name="modifications"></textarea>

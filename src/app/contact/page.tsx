@@ -153,7 +153,7 @@ export default function ContactPage() {
               Ready for a Quote?
             </h2>
             <p className="text-muted-foreground mb-6">
-              Skip the wait - get a personalized quote for your Talaria in minutes.
+              Skip the wait - get a personalized quote for your hotshot rig in minutes.
             </p>
             <Button asChild size="lg" className="bg-indigo-600 hover:bg-indigo-700">
               <Link href="/quote">

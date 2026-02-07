@@ -23,7 +23,7 @@ export default function TermsPage() {
 
           <h2>Description of Services</h2>
           <p>
-            Surron Insurance provides information about electric bike insurance products and 
+            Surron Insurance provides information about hotshot truck insurance products and 
             facilitates the process of obtaining insurance quotes. We act as an insurance agency, 
             connecting you with insurance carriers that provide coverage.
           </p>

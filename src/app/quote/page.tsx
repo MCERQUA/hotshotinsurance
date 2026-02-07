@@ -11,10 +11,10 @@ import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Get a Free Quote",
-  description: "Get a free, no-obligation quote for your Talaria electric bike insurance. Fast online quotes for Light Bee, Storm Bee, Ultra Bee, and all Talaria models.",
+  description: "Get a free, no-obligation quote for your hotshot truck hotshot truck insurance. Fast online quotes for Light Bee, Storm Bee, Ultra Bee, and all hotshot truck models.",
   openGraph: {
-    title: "Get a Free Quote | Talaria Insurance",
-    description: "Get a free, no-obligation quote for your Talaria electric bike insurance.",
+    title: "Get a Free Quote | hotshot truck Insurance",
+    description: "Get a free, no-obligation quote for your hotshot truck hotshot truck insurance.",
   },
 };
 
@@ -29,7 +29,7 @@ export default function QuotePage() {
               Get Your Free Quote
             </h1>
             <p className="text-lg text-slate-200">
-              Complete the form below and we'll provide a customized quote for your Talaria.
+              Complete the form below and we'll provide a customized quote for your hotshot truck.
             </p>
           </div>
         </div>
@@ -95,7 +95,7 @@ export default function QuotePage() {
                       </div>
                       <div>
                         <p className="font-medium text-sm">Expert Coverage</p>
-                        <p className="text-xs text-muted-foreground">Designed for e-bike owners</p>
+                        <p className="text-xs text-muted-foreground">Designed for truck owners</p>
                       </div>
                     </div>
                   </div>

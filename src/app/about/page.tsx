@@ -1,102 +1,134 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { 
-  Shield, 
-  Users, 
-  MapPin, 
-  Award, 
+import {
+  Shield,
+  Users,
+  MapPin,
+  Award,
   CheckCircle,
   ArrowRight,
   Phone,
-  Mail
+  Mail,
+  Truck,
+  Gauge,
+  DollarSign
 } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: "Learn about Contractor's Choice Agency and our specialized Talaria electric bike insurance coverage. Founded by Josh Cotner, licensed in all 50 states.",
+  description: "Learn about Contractor's Choice Agency and our specialized hotshot trucking insurance coverage. Founded by Josh Cotner in 2005, licensed in all 50 states. Protecting truckers nationwide.",
   openGraph: {
-    title: "About Us | Talaria Insurance",
-    description: "Learn about Contractor's Choice Agency and our specialized Talaria electric bike insurance coverage.",
+    title: "About Us | Hotshot Insurance",
+    description: "Founded by Josh Cotner in 2005. Specialized insurance for hotshot truckers nationwide. General liability, cargo protection, and physical damage coverage.",
   },
 };
 
 export default function AboutPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="gradient-hero text-white py-16 lg:py-24">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              About {siteConfig.company.name}
+      {/* Hero Section - Badass Trucker Theme */}
+      <section className="relative py-20 lg:py-32 overflow-hidden bg-truck-black">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/trucks/truck-grille.png"
+            alt="Hotshot truck"
+            fill
+            className="object-cover object-center opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black" />
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6">
+              BUILT BY TRUCKERS, <span className="text-gradient">FOR TRUCKERS</span>
             </h1>
-            <p className="text-lg md:text-xl text-slate-200">
-              Dedicated to providing specialized insurance solutions for the electric bike community.
+            <p className="text-xl md:text-2xl text-gray-300 font-medium">
+              Two decades of protecting the road warriors who keep America moving.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Our Story */}
-      <section className="py-16 lg:py-24">
+      {/* Our Story - Josh's Journey */}
+      <section className="py-20 lg:py-28 bg-gradient-to-b from-truck-black to-truck-charcoal">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Our Story
+              <h2 className="text-4xl md:text-5xl font-black text-white mb-8">
+                THE ROAD <span className="text-gradient">THAT LED US HERE</span>
               </h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                {siteConfig.company.name} was founded by {siteConfig.company.founder} with a simple mission: to provide insurance coverage that actually understands the needs of electric bike owners.
+              <p className="text-xl text-gray-300 mb-6 leading-relaxed">
+                <strong className="text-white">{siteConfig.company.name}</strong> was founded by <strong className="text-truck-amber">{siteConfig.company.founder}</strong> back in <strong className="text-white">{siteConfig.company.foundedYear}</strong> with one simple mission: give hardworking contractors and truckers insurance that actually <span className="text-truck-amber font-bold">gets it</span>.
               </p>
-              <p className="text-muted-foreground mb-6">
-                After experiencing firsthand the frustration of trying to insure high-performance e-bikes through traditional carriers, we realized there was a gap in the market. Standard auto insurers don't understand the value of a Talaria. Homeowner's policies often have exclusions or inadequate limits. Riders deserved better.
+              <p className="text-lg text-gray-400 mb-6 leading-relaxed">
+                Josh didn't start behind a desk. He started in the field, working alongside contractors and truckers, hearing their frustrations with insurance companies that didn't understand the hustle, the risk, or the reality of life on the road.
               </p>
-              <p className="text-muted-foreground mb-8">
-                Today, we're proud to offer specialized coverage for Talaria riders across all 50 states. Our team understands the e-bike community because we're part of it.
+              <p className="text-lg text-gray-400 mb-6 leading-relaxed">
+                Traditional carriers didn't get hotshot trucking. They'd lowball coverage limits, exclude critical protections, or charge rates that made no sense. <strong className="text-white">Truckers deserved better.</strong>
               </p>
-              
-              <div className="flex flex-wrap gap-4">
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-indigo-600" />
-                  <span className="font-medium">Licensed Nationwide</span>
+              <p className="text-lg text-gray-400 mb-8 leading-relaxed">
+                Today, we're the go-to agency for hotshot operators across all 50 states. We know your rig. We know your cargo. We know the road. <strong className="text-truck-amber">And we've got your back.</strong>
+              </p>
+
+              <div className="flex flex-wrap gap-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-lg bg-truck-green/20 flex items-center justify-center">
+                    <CheckCircle className="h-6 w-6 text-truck-green" />
+                  </div>
+                  <div>
+                    <div className="text-white font-bold text-lg">Licensed Nationwide</div>
+                    <div className="text-gray-400 text-sm">All 50 States</div>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-indigo-600" />
-                  <span className="font-medium">E-Bike Specialists</span>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-lg bg-truck-orange/20 flex items-center justify-center">
+                    <Award className="h-6 w-6 text-truck-amber" />
+                  </div>
+                  <div>
+                    <div className="text-white font-bold text-lg">20 Years</div>
+                    <div className="text-gray-400 text-sm">Industry Experience</div>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-indigo-600" />
-                  <span className="font-medium">Fast Claims</span>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-lg bg-truck-amber/20 flex items-center justify-center">
+                    <Shield className="h-6 w-6 text-truck-amber" />
+                  </div>
+                  <div>
+                    <div className="text-white font-bold text-lg">Hotshot Experts</div>
+                    <div className="text-gray-400 text-sm">We Know Trucking</div>
+                  </div>
                 </div>
               </div>
             </div>
-            
-            <div className="bg-slate-100 rounded-2xl p-8 lg:p-12">
+
+            <div className="truck-paint border-2 border-truck-orange/20 rounded-3xl p-10 lg:p-14">
               <div className="text-center">
-                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-indigo-500 to-blue-500 flex items-center justify-center mx-auto mb-6">
-                  <Users className="h-12 w-12 text-white" />
+                <div className="w-28 h-28 rounded-2xl bg-gradient-to-br from-truck-orange to-truck-amber flex items-center justify-center mx-auto mb-8 shadow-2xl shadow-truck-orange/30">
+                  <Users className="h-14 w-14 text-black" />
                 </div>
-                <h3 className="text-2xl font-bold mb-2">{siteConfig.company.founder}</h3>
-                <p className="text-muted-foreground mb-4">Founder & Principal Agent</p>
-                <p className="text-sm text-muted-foreground mb-6">
-                  "We built this agency because riders deserve insurance that values their bikes as much as they do."
+                <h3 className="text-3xl font-black text-white mb-2">{siteConfig.company.founder}</h3>
+                <p className="text-truck-amber font-bold text-lg mb-6">Founder & Principal Agent</p>
+                <p className="text-gray-300 text-lg mb-8 italic leading-relaxed">
+                  "I built this agency for the guys who move freight, take risks, and don't quit. You work hard. You deserve insurance that works just as hard for you."
                 </p>
-                <div className="space-y-2">
-                  <a 
+                <div className="space-y-4">
+                  <a
                     href={`tel:${siteConfig.company.phone}`}
-                    className="flex items-center justify-center gap-2 text-indigo-600 hover:underline"
+                    className="flex items-center justify-center gap-3 text-truck-amber hover:text-white transition-colors font-bold text-lg"
                   >
-                    <Phone className="h-4 w-4" />
+                    <Phone className="h-5 w-5" />
                     {siteConfig.company.phone}
                   </a>
-                  <a 
+                  <a
                     href={`mailto:${siteConfig.company.email}`}
-                    className="flex items-center justify-center gap-2 text-indigo-600 hover:underline"
+                    className="flex items-center justify-center gap-3 text-gray-400 hover:text-truck-amber transition-colors"
                   >
-                    <Mail className="h-4 w-4" />
+                    <Mail className="h-5 w-5" />
                     {siteConfig.company.email}
                   </a>
                 </div>
@@ -106,63 +138,65 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-16 lg:py-24 bg-slate-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why Choose Us
+      {/* Why Choose Us - Power Features */}
+      <section className="py-20 lg:py-28 bg-truck-black relative">
+        <div className="absolute inset-0 road-texture opacity-30" />
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center max-w-4xl mx-auto mb-16">
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+              WHY TRUCKERS <span className="text-gradient">TRUST US</span>
             </h2>
-            <p className="text-lg text-muted-foreground">
-              We're not just another insurance agency. Here's what sets us apart.
+            <p className="text-xl text-gray-300">
+              We're not just brokers. We're your partners on every mile.
             </p>
           </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <div className="w-16 h-16 rounded-full bg-indigo-500/10 flex items-center justify-center mx-auto mb-4">
-                  <Shield className="h-8 w-8 text-indigo-600" />
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <Card className="truck-paint border-2 border-white/10 hover:border-truck-orange/50 transition-all group text-center">
+              <CardContent className="pt-10 pb-8">
+                <div className="w-20 h-20 rounded-2xl bg-truck-orange/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-truck-orange/20 transition-colors">
+                  <Truck className="h-10 w-10 text-truck-amber" />
                 </div>
-                <h3 className="font-bold text-lg mb-2">Specialized Expertise</h3>
-                <p className="text-sm text-muted-foreground">
-                  We focus specifically on e-bike insurance, giving us deep knowledge of your coverage needs.
+                <h3 className="font-black text-xl text-white mb-3">Hotshot Specialists</h3>
+                <p className="text-gray-400 leading-relaxed">
+                  We live and breathe hotshot trucking. From duallies to medium-duty rigs, we know your world.
                 </p>
               </CardContent>
             </Card>
-            
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <div className="w-16 h-16 rounded-full bg-blue-500/10 flex items-center justify-center mx-auto mb-4">
-                  <MapPin className="h-8 w-8 text-blue-600" />
+
+            <Card className="truck-paint border-2 border-white/10 hover:border-truck-orange/50 transition-all group text-center">
+              <CardContent className="pt-10 pb-8">
+                <div className="w-20 h-20 rounded-2xl bg-truck-green/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-truck-green/20 transition-colors">
+                  <MapPin className="h-10 w-10 text-truck-green" />
                 </div>
-                <h3 className="font-bold text-lg mb-2">Nationwide Coverage</h3>
-                <p className="text-sm text-muted-foreground">
-                  Licensed in all 50 states, we can protect your Talaria no matter where you ride.
+                <h3 className="font-black text-xl text-white mb-3">50-State Coverage</h3>
+                <p className="text-gray-400 leading-relaxed">
+                  Licensed nationwide. Take your rig anywhere in America with full protection.
                 </p>
               </CardContent>
             </Card>
-            
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <div className="w-16 h-16 rounded-full bg-violet-500/10 flex items-center justify-center mx-auto mb-4">
-                  <Award className="h-8 w-8 text-violet-600" />
+
+            <Card className="truck-paint border-2 border-white/10 hover:border-truck-orange/50 transition-all group text-center">
+              <CardContent className="pt-10 pb-8">
+                <div className="w-20 h-20 rounded-2xl bg-truck-amber/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-truck-amber/20 transition-colors">
+                  <DollarSign className="h-10 w-10 text-truck-amber" />
                 </div>
-                <h3 className="font-bold text-lg mb-2">Fair Valuations</h3>
-                <p className="text-sm text-muted-foreground">
-                  We understand the true value of your e-bike, including aftermarket modifications.
+                <h3 className="font-black text-xl text-white mb-3">Fair Valuations</h3>
+                <p className="text-gray-400 leading-relaxed">
+                  We understand your rig's true value, including custom equipment and upgrades.
                 </p>
               </CardContent>
             </Card>
-            
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <div className="w-16 h-16 rounded-full bg-cyan-500/10 flex items-center justify-center mx-auto mb-4">
-                  <Users className="h-8 w-8 text-cyan-600" />
+
+            <Card className="truck-paint border-2 border-white/10 hover:border-truck-orange/50 transition-all group text-center">
+              <CardContent className="pt-10 pb-8">
+                <div className="w-20 h-20 rounded-2xl bg-truck-orange/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-truck-orange/20 transition-colors">
+                  <Gauge className="h-10 w-10 text-truck-orange" />
                 </div>
-                <h3 className="font-bold text-lg mb-2">Personal Service</h3>
-                <p className="text-sm text-muted-foreground">
-                  Work directly with our team, not a call center. We're real people who care.
+                <h3 className="font-black text-xl text-white mb-3">Fast Service</h3>
+                <p className="text-gray-400 leading-relaxed">
+                  Quotes in minutes. Claims handled fast. No call centers, just real people who care.
                 </p>
               </CardContent>
             </Card>
@@ -171,28 +205,28 @@ export default function AboutPage() {
       </section>
 
       {/* Our Locations */}
-      <section className="py-16 lg:py-24">
+      <section className="py-20 lg:py-28 bg-truck-charcoal">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Our Office
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+              OUR <span className="text-gradient">HEADQUARTERS</span>
             </h2>
-            <p className="text-lg text-muted-foreground">
-              Based in Arizona, serving riders nationwide.
+            <p className="text-xl text-gray-300">
+              Based in Arizona, protecting truckers nationwide.
             </p>
           </div>
-          
-          <div className="max-w-md mx-auto">
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {siteConfig.company.addresses.map((address, i) => (
-              <Card key={i}>
-                <CardContent className="pt-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-indigo-500/10 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="h-6 w-6 text-indigo-600" />
+              <Card key={i} className="truck-paint border-2 border-truck-orange/20">
+                <CardContent className="pt-8 pb-8">
+                  <div className="flex items-start gap-6">
+                    <div className="w-16 h-16 rounded-xl bg-truck-orange/10 flex items-center justify-center flex-shrink-0">
+                      <MapPin className="h-8 w-8 text-truck-amber" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-lg mb-1">Headquarters</h3>
-                      <p className="text-muted-foreground">
+                      <h3 className="font-black text-xl text-white mb-2">Office {i + 1}</h3>
+                      <p className="text-gray-300 text-lg">
                         {address.street}<br />
                         {address.city}, {address.state} {address.zip}
                       </p>
@@ -206,24 +240,42 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 lg:py-24 gradient-hero text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Work With Us?
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/trucks/hero-truck.png"
+            alt="Hotshot truck on highway"
+            fill
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-black/85" />
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-8">
+              READY TO <span className="text-gradient-white-amber">ROLL WITH US</span>?
             </h2>
-            <p className="text-lg text-slate-200 mb-8">
-              Let's find the perfect coverage for your Talaria. Get a free quote today.
+            <p className="text-2xl text-gray-300 mb-10">
+              Get your free hotshot insurance quote today. Coverage built for the road.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-gradient-to-r from-indigo-500 to-blue-500 hover:from-indigo-600 hover:to-blue-600">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Button
+                asChild
+                size="lg"
+                className="bg-truck-orange hover:bg-truck-amber text-black font-black px-12 py-8 text-xl rounded-xl shadow-2xl shadow-truck-orange/40"
+              >
                 <Link href="/quote">
-                  Get Your Free Quote
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  GET YOUR FREE QUOTE
+                  <ArrowRight className="ml-3 h-6 w-6" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
-                <Link href="/contact">Contact Us</Link>
+              <Button
+                asChild
+                size="lg"
+                className="border-3 border-white text-white hover:bg-white/10 px-12 py-8 text-xl rounded-xl backdrop-blur font-bold"
+              >
+                <Link href="/contact">CONTACT US</Link>
               </Button>
             </div>
           </div>
